@@ -1,0 +1,284 @@
+# Keyword codebook: the only place keywords live. The code reads this file;
+# never hardcode keywords in Python.
+# Source: "Brief for developer" PDF, sections 2 and 3.
+version: 1
+
+sentiment:
+  1:
+    band: Negative (strong)
+    en:
+      - hate
+      - disgusting
+      - illegal
+      - scam
+      - steal
+      - stealing customers
+      - deport
+      - kick out
+      - ban them
+      - unfair
+      - dangerous
+      - threat
+      - criminal
+      - refuse to buy
+      - boycott
+    bm:
+      - benci
+      - jijik
+      - busuk
+      - penipu
+      - haram
+      - tipu
+      - curi
+      - curi pelanggan
+      - halau
+      - buang
+      - tak adil
+      - bahaya
+      - ancaman
+      - penjenayah
+      - tak nak beli
+      - boikot
+  2:
+    band: Negative (mild)
+    en:
+      - overpriced
+      - not worth it
+      - bad quality
+      - unfair competition
+      - undercutting
+      - no permit
+      - unlicensed
+      - not clean
+      - hygiene issue
+      - complain
+      - disappointed
+      - won't recommend
+    bm:
+      - mahal
+      - tak berbaloi
+      - kualiti teruk
+      - saing tak adil
+      - potong harga
+      - tiada lesen
+      - tak berdaftar
+      - tak bersih
+      - kotor
+      - mengadu
+      - kecewa
+      - tak sokong
+  3:
+    band: Neutral
+    en:
+      - okay
+      - so-so
+      - noticed
+      - saw
+      - mentioned
+      - exists
+      - another one
+      - question
+      - unsure
+      - not sure if
+      - how does this work
+      - curious
+    bm:
+      - biasa je
+      - nampak
+      - perasan
+      - sebut
+      - ada lagi
+      - soalan
+      - tak pasti
+      - macam mana ni
+      - ingin tahu
+  4:
+    band: Positive (mild)
+    en:
+      - affordable
+      - cheap
+      - decent
+      - friendly
+      - fast delivery
+      - good service
+      - reasonable price
+      - will try
+      - support small business
+      - give them a chance
+    bm:
+      - murah
+      - berpatutan
+      - baik
+      - ramah
+      - laju
+      - servis bagus
+      - harga munasabah
+      - nak cuba
+      - sokong
+      - bagi peluang
+  5:
+    band: Positive (strong)
+    en:
+      - delicious
+      - excellent
+      - love it
+      - highly recommend
+      - best
+      - amazing
+      - always buy from them
+      - proud to support
+      - admire
+      - resilient
+      - inspiring
+    bm:
+      - sedap
+      - terbaik
+      - suka sangat
+      - sangat recommend
+      - hebat
+      - memang bagus
+      - selalu beli
+      - bangga sokong
+      - kagum
+      - tabah
+      - inspirasi
+
+legitimacy:
+  cognitive:
+    granted:
+      en:
+        - shop
+        - business
+        - stall
+        - vendor
+        - seller
+        - runs a
+        - owns a
+        - operates
+        - established
+        - regular customer
+        - always order from
+        - known for
+      bm:
+        - kedai
+        - perniagaan
+        - gerai
+        - peniaga
+        - jual
+        - buka kedai
+        - usahawan
+        - pelanggan tetap
+        - beli selalu
+    denied:
+      en:
+        - not a real business
+        - illegal
+        - unlicensed
+        - no permit
+        - how are they even allowed
+        - who let them
+        - not supposed to
+        - undocumented
+        - unauthorized
+        - black market
+      bm:
+        - tak berdaftar
+        - haram
+        - tak sah
+        - tiada lesen
+        - tiada permit
+        - macam mana boleh jual
+        - bukan kedai sebenar
+        - peniaga haram
+        - tanpa kebenaran
+        - penipu
+        - busuk
+  pragmatic:
+    granted:
+      en:
+        - cheap
+        - affordable
+        - good price
+        - worth it
+        - delicious
+        - good quality
+        - fast delivery
+        - friendly
+        - will buy again
+        - support small business
+        - give them a chance
+        - good service
+        - reasonable price
+        - recommend
+      bm:
+        - murah
+        - berbaloi
+        - sedap
+        - bagus
+        - laju
+        - ramah
+        - sokong
+        - cuba dulu
+        - puas hati
+        - servis bagus
+        - harga berpatutan
+    denied:
+      en:
+        - overpriced
+        - not worth it
+        - bad quality
+        - scam
+        - ripped off
+        - steals customers
+        - undercutting
+        - unfair competition
+        - taking away business from locals
+        - hygiene issues
+        - not clean
+        - won't buy from them
+      bm:
+        - mahal
+        - tak berbaloi
+        - kualiti teruk
+        - tipu
+        - kena tipu
+        - rebut pelanggan
+        - curi pelanggan
+        - saing tak adil
+        - tak bersih
+        - kotor
+        - tak nak beli
+  moral:
+    granted:
+      en:
+        - they have no choice
+        - let them earn a living
+        - deserve a chance
+        - humanitarian
+        - refugees need help
+        - we should help
+        - compassion
+        - human rights
+      bm:
+        - tiada pilihan
+        - biar depa cari makan
+        - patut dibantu
+        - kemanusiaan
+        - perlu tolong
+        - kasihan
+        - hak asasi
+    denied:
+      en:
+        - it's not right that
+        - unfair to locals
+        - taking advantage
+        - abusing the system
+        - shouldn't be allowed to work
+        - not their country
+      bm:
+        - tak patut
+        - tak adil kat rakyat tempatan
+        - ambil kesempatan
+        - salah guna sistem
+        - tak sepatutnya kerja
+        - bukan negara depa

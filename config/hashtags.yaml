@@ -1,0 +1,10 @@
+primary: RohingyaMalaysia
+variants:
+  - Rohingya_Malaysia
+candidate_typos:
+  - RohingyaMalaysiaa
+  - RohingyaMalayisa
+include_split_pair: false
+window:
+  since: 2025-06-01
+  until: 2025-07-01
