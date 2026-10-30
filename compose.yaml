@@ -1,0 +1,14 @@
+services:
+  xetl:
+    build:
+      context: .
+      args:
+        GIT_SHA: ${GIT_SHA:-unknown}
+    image: xetl:dev
+    env_file: .env
+    volumes:
+      # Data, account sessions and the client's template stay on the host, never in the image.
+      - ./data:/app/data
+      - ./templates:/app/templates:ro
+      # Mounted so codebook and rules edits apply without a rebuild.
+      - ./config:/app/config:ro

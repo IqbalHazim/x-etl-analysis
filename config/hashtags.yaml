@@ -6,5 +6,5 @@ candidate_typos:
   - RohingyaMalayisa
 include_split_pair: false
 window:
-  since: 2025-09-01
+  since: 2025-06-01
   until: 2026-09-01

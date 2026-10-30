@@ -1,6 +1,7 @@
 [project]
 name = "xetl"
 version = "0.1.0"
+description = "ETL and rule-based sentiment/legitimacy analysis of #RohingyaMalaysia posts on X"
 readme = "README.md"
 authors = [
     { name = "IqbalHzm", email = "iqbal@defidive.com" }
@@ -22,7 +23,7 @@ dependencies = [
 ]
 
 [project.scripts]
-xetl = "xetl:main"
+xetl = "xetl.cli:app"
 
 [build-system]
 requires = ["uv_build>=0.13.6,<0.14.0"]
@@ -34,3 +35,12 @@ dev = [
     "pytest>=9.1.1",
     "ruff>=0.17.3",
 ]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

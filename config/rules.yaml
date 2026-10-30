@@ -1,0 +1,61 @@
+# Rules for the keyword engine. The keywords themselves live in codebook.yaml;
+# this file says how they are matched and combined. Tune it after the pilot.
+version: 1
+
+scope:
+  # Pure retweets repeat someone else's text, so they are counted in the pilot
+  # stats but not scored. Open client question; this is the recommended default.
+  exclude_retweets: true
+
+matching:
+  # A negator shortly before a keyword flips it: "tak murah" scores as 2 instead
+  # of 4, and pragmatic Granted becomes Denied. Phrases that already start with a
+  # negator ("tak berbaloi") are codebook keywords and are matched first.
+  # "no" must stay quoted: unquoted, YAML reads it as false.
+  negators: [tak, tidak, bukan, tiada, not, "no", never, "don't", dont, "didn't", didnt,
+             "won't", wont, "isn't", isnt, "wasn't", "aren't", "can't", cant, cannot]
+  negation_window: 2  # how many tokens before a keyword are checked for a negator
+
+  # Informal spellings rewritten before matching (whole tokens, lowercase).
+  spelling:
+    tk: tak
+    tdk: tidak
+    takde: tiada
+    tkde: tiada
+    xde: tiada
+    tade: tiada
+    sdp: sedap
+    mrh: murah
+    bgs: bagus
+    sgt: sangat
+    jer: je
+    jee: je
+    org: orang
+
+  # Applied before lowercasing, so "X" (the platform) is not read as "tak".
+  spelling_case_sensitive:
+    x: tak
+
+sentiment:
+  # How several matched keywords become one 1-5 score:
+  #   mean    - rounded average of the matched scores (4 and 5 -> 5, 2 and 4 -> 3)
+  #   extreme - the matched score furthest from neutral
+  # Open client question.
+  combine: mean
+  # Score given when no sentiment keyword matches. Always flagged for review.
+  no_match_score: 3
+
+legitimacy:
+  # keep: tag legitimacy on every tweet
+  # na:   force NA on all three types when the sentiment score is 3
+  # Open client question (the brief says positive and negative tweets are recategorized).
+  neutral_policy: keep
+
+review:
+  # Tweets get needs_review = Y when any of these apply.
+  min_confidence: 0.6
+  # Sarcasm cue + a positive match, e.g. "wah bagus lah, ... tak payah lesen".
+  sarcasm_markers: [wah, konon, kononnya, yeah right, pandai la, pandai lah, bagus la,
+                    bagus lah, hebat la, hebat lah, sure lah, great job]
+  # Keywords with more than one common meaning ("haram" = non-halal or illegal).
+  ambiguous_keywords: [haram, best, buang, jual, baik, curi]
